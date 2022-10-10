@@ -1,0 +1,76 @@
+/* Parametres du footer, est en position absolute en bas de la page*/
+footer {
+    background-color: #f9f7f7;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    color: #112D4E;
+    font-size: 13pt;
+    width: 100%;
+}
+
+/* Padding pour ne pas que le footer overlap sur la page*/
+main {
+    padding-bottom: 350px;
+}
+
+/* Parametres des anchor tags, enlever les text-decoration*/
+footer a {
+    text-decoration: none;
+    color: #112D4E;
+}
+
+/* Enlever les points du footer*/
+footer ul {
+    list-style: none;
+}
+
+/* Grid contenant le footer, diviser en 4 sections*/
+
+.conteneur-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+/* Tous les divs dans mon conteneur footer ont du padding et le texte est aligner au centre*/
+
+.conteneur-footer>div {
+    text-align: center;
+    list-style: inside;
+    padding: 20px;
+}
+
+/* Dimensions de chacune des sections du footer : GRID ROW START, GRID COLUMN START, GRID ROW END , GRID COLONNE END*/
+
+.section-nom {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+/* Dimensions de chacune des sections du footer : GRID ROW START, GRID COLUMN START, GRID ROW END , GRID COLONNE END*/
+
+.section-social {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+/* Dimensions de chacune des sections du footer : GRID ROW START, GRID COLUMN START, GRID ROW END , GRID COLONNE END*/
+
+.section-contact {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+/* Lorsque l ecran est de 720px le footer se met en display flex et flex-flow column pour que ce rentre dans la page*/
+
+@media screen and (max-width: 720px) {
+    .conteneur-footer {
+        display: flex;
+        flex-flow: column;
+    }
+
+    /* Padding pour compenser le footer qui devient en column wrap pour ne pas que le footer overlap sur la page*/
+    main {
+        padding-bottom: 550px;
+    }
+}
